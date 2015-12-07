@@ -1,19 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent" >
 
-    <include
-        android:id="@+id/done_cancel_bar"
-        layout="@layout/crop__layout_done_cancel" />
+    <LinearLayout
+        android:id="@+id/doodle_crop"
+        style="@style/Crop.DoneCancelBar"
+        android:layout_alignParentBottom="true" >
+
+        <FrameLayout
+            android:id="@+id/btn_cancel"
+            style="@style/Crop.ActionButton" >
+
+            <TextView style="@style/Crop.ActionButtonText.Cancel" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/btn_doodle"
+            style="@style/Crop.ActionButton" >
+
+            <TextView style="@style/Crop.ActionButtonText.Doodle" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/btn_crop"
+            style="@style/Crop.ActionButton" >
+
+            <TextView style="@style/Crop.ActionButtonText.Crop" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/btn_done"
+            style="@style/Crop.ActionButton" >
+
+            <TextView style="@style/Crop.ActionButtonText.Done" />
+        </FrameLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/doodle_config"
+        style="@style/Crop.DoneCancelBar"
+        android:layout_above="@id/doodle_crop" >
+
+        <RadioGroup
+            android:id="@+id/btn_doodle_color"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal" >
+                <RadioButton
+                    android:id="@+id/btn_doodle_red"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/btn_doodle_red" />
+
+                <RadioButton
+                    android:id="@+id/btn_doodle_white"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/btn_doodle_white" />
+        </RadioGroup>
+        <RadioGroup 
+            android:id="@+id/btn_doodle_stroke"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+            <RadioButton
+                    android:id="@+id/btn_doodle_wide"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/btn_doodle_wide" />
+            <RadioButton
+                    android:id="@+id/btn_doodle_middle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/btn_doodle_middle" />
+            <RadioButton
+                    android:id="@+id/btn_doodle_strait"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/btn_doodle_strait" />
+        </RadioGroup>
+    </LinearLayout>
 
     <com.soundcloud.android.crop.CropImageView
         android:id="@+id/crop_image"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/crop__texture"
-        android:layout_below="@id/done_cancel_bar" />
+        android:layout_above="@id/doodle_config"
+        android:background="@drawable/crop__texture" />
+
+    <com.soundcloud.android.crop.DoodleImageView
+        android:id="@+id/doodle_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/doodle_config"
+        android:background="@drawable/crop__texture" />
 
 </RelativeLayout>

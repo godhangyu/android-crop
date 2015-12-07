@@ -40,5 +40,13 @@
         <item name="android:drawableLeft">@drawable/crop__ic_cancel</item>
         <item name="android:text">@string/crop__cancel</item>
     </style>
+    
+    <style name="Crop.ActionButtonText.Doodle">
+        <item name="android:text">涂鸦</item>
+    </style>
+    
+    <style name="Crop.ActionButtonText.Crop">
+        <item name="android:text">裁剪</item>
+    </style>
 
 </resources>

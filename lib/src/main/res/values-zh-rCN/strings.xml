@@ -6,5 +6,10 @@
 
     <string name="crop__done">完成</string>
     <string name="crop__cancel" tools:ignore="ButtonCase">取消</string>
+    <string name="btn_doodle_red">红色</string>
+    <string name="btn_doodle_white">白色</string>
+    <string name="btn_doodle_wide">粗</string>
+    <string name="btn_doodle_middle">中</string>
+    <string name="btn_doodle_strait">细</string>
 
 </resources>
